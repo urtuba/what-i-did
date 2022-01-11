@@ -1,0 +1,8 @@
+import { dirname, join } from 'path'
+import { fileURLToPath } from 'url'
+
+const rootDir  = dirname(fileURLToPath(import.meta.url))
+const dbPath   = join(rootDir, '/db/data.json')
+const userName = 'urtuba'
+
+export default { rootDir, dbPath, userName }
