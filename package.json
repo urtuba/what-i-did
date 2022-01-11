@@ -1,0 +1,20 @@
+{
+  "name": "what-i-did",
+  "version": "1.0.0",
+  "description": "what-i-did: wid is simple daily logging app to take quick notes with categories",
+  "type": "module",
+  "main": "wid.js",
+  "scripts": {
+    "test": "node wid.js"
+  },
+  "keywords": [
+    "note",
+    "log",
+    "node"
+  ],
+  "author": "urtuba",
+  "license": "MIT",
+  "dependencies": {
+    "uuid": "^8.3.2"
+  }
+}
