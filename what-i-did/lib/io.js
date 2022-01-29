@@ -44,7 +44,7 @@ const printLastLogs = async (tags = null, limit = 20) => {
   if (tags == null) logs = database.getLogs()
   else logs = filterByTags(database.getLogs(), ...tags)
 
-  if (logs.length > 20) logs = logs.slice(-20)
+  if (logs.length > limit) logs = logs.slice(-limit)
 
   logs.forEach((log, i) => printLog(log, i%2))
 }

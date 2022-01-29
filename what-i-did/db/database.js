@@ -1,10 +1,10 @@
 import fs from 'fs'
-import config from '../config.js'
+import { dbPath } from '../config.js'
 import Log from '../lib/log.js'
 
 class Database {
   constructor () {
-    this.path = config.dbPath
+    this.path = dbPath
 
     if (fs.existsSync(this.path)) {
       this.data = JSON.parse(fs.readFileSync(this.path))

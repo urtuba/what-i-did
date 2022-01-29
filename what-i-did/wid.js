@@ -1,4 +1,5 @@
 import io from './lib/io.js'
+import {defaultLimit} from './config.js'
 
 const main = async () => {
   if (process.argv[2] == 'log')
@@ -12,8 +13,8 @@ const main = async () => {
       .map((config) => config.slice(6))
 
     const limitConf = configs.find((config) => config.startsWith('--limit='))
-    const limit = limitConf ? parseInt(limitConf.slice(8)) : 2000
-
+    const limit = limitConf ? parseInt(limitConf.slice(8)) : defaultLimit
+    console.log(limit)
     io.printLastLogs(tags, limit)
   }
 }
