@@ -42,7 +42,7 @@ const printLog = (log, colorNo) => {
 const printLastLogs = async (tags = null, limit = 20) => {
   let logs
   if (tags == null) logs = database.getLogs()
-  else logs = filterByTags(database.getLogs())
+  else logs = filterByTags(database.getLogs(), ...tags)
 
   if (logs.length > 20) logs = logs.slice(-20)
 
