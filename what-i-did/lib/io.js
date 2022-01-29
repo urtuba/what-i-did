@@ -5,6 +5,23 @@ import colors from 'colors/safe.js'
 import Log from './log.js'
 import { filterByTags } from './filters.js'
 
+const help = () => {
+  console.log('\nWelcome to ' + colors.bold(colors.green('what-i-did!')) + '! ' + 'You can log your daily activities / notes / reminders here. Us')
+  console.log(colors.bold(colors.cyan('\nUsage:')))
+  console.log(
+    colors.bold(colors.red('\twid log [...tags]\n\t\t>')) +
+    ' Allows you to log. You can add tags to your log by adding them after the log command.\n'
+  )
+  console.log(
+    colors.bold(colors.red('\twid ls [--tag=tag1] [--tag=tag2]... [--limit=n]\n\t\t>')) +
+    ' Allows you to list your logs. You can filter by tags and limit the number of logs to be displayed.\n'
+  )
+  console.log(
+    colors.bold(colors.red('\twid help\n\t\t>')) +
+    ' Shows this help message.\n'
+  )
+}
+
 const saveLog = async (tags) => {
   const rl = readline.createInterface({
     input: process.stdin,
@@ -40,16 +57,16 @@ const printLog = (log, colorNo) => {
 }
 
 const printLastLogs = async (tags = null, limit = 20) => {
-  let logs
-  if (tags == null) logs = database.getLogs()
-  else logs = filterByTags(database.getLogs(), ...tags)
+  const logs = database.getLogs()
 
-  if (logs.length > limit) logs = logs.slice(-limit)
+  let filteredLogs = filterByTags(logs, ...tags)
+  if (logs.length > limit) filteredLogs = filteredLogs.slice(-limit)
 
-  logs.forEach((log, i) => printLog(log, i%2))
+  filteredLogs.forEach((log, i) => printLog(log, i%2))
 }
 
 export default {
+  help,
   saveLog,
   printLog,
   printLastLogs

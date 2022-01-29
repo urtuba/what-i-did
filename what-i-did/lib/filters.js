@@ -1,7 +1,10 @@
 const filterByTags = (logs, ...tags) => {
-  return logs.filter(log => {
-    return tags.some(tag => log.hasTag(tag))
-  })
+  if (tags.length == 0)
+    return logs
+  else
+    return logs.filter(log => {
+      return tags.some(tag => log.hasTag(tag))
+    })
 }
 
 export {
