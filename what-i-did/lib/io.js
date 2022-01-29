@@ -5,6 +5,10 @@ import colors from 'colors/safe.js'
 import Log from './log.js'
 import { filterByTags } from './filters.js'
 
+/**
+ * Prints help message. 
+ * @returns {void}  Nothing
+ */
 const help = () => {
   console.log('\nWelcome to ' + colors.bold(colors.green('what-i-did!')) + '! ' + 'You can log your daily activities / notes / reminders here. Us')
   console.log(colors.bold(colors.cyan('\nUsage:')))
@@ -22,6 +26,11 @@ const help = () => {
   )
 }
 
+/**
+ * It logs a note with the given tags.
+ * It uses console / prompt to ask for the note.
+ * @param {String[]} tags   Tags to be added to the log
+ */
 const saveLog = async (tags) => {
   const rl = readline.createInterface({
     input: process.stdin,
@@ -41,6 +50,11 @@ const saveLog = async (tags) => {
   rl.close()
 }
 
+/**
+ * 
+ * @param {Log} log   Log to be printed
+ * @param {Number} colorNo  Color number for date field
+ */
 const printLog = (log, colorNo) => {
   let color
   if (colorNo == 0)
