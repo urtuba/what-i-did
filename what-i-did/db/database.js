@@ -1,6 +1,6 @@
 import fs from 'fs'
 import config from '../config.js'
-import Log from '../models/log.js'
+import Log from '../lib/log.js'
 
 class Database {
   constructor () {

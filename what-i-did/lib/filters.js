@@ -4,6 +4,6 @@ const filterByTags = (logs, ...tags) => {
   })
 }
 
-export default {
+export {
   filterByTags
 }
