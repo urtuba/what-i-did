@@ -10,7 +10,7 @@ echo '-----> dependencies installed'
 
 echo "alias wid='node ~/.what-i-did/wid.js'" >> ~/.zshrc
 source ~/.zshrc
-alias wid2='node ~/.what-i-did/wid.js'
+alias wid='node ~/.what-i-did/wid.js'
 echo '-----> terminal command installed'
 
 echo 'DONE'
