@@ -7,7 +7,7 @@ import { v4 } from 'uuid'
  * @param {string} tags
  */
 class Log {
-  constructor (note, tags = []) {
+  constructor(note, tags = []) {
     this.id = v4()
     this.note = note
     this.tags = tags
@@ -18,12 +18,12 @@ class Log {
    * Converts the log to JSON.
    * @returns {Object}  JSON object { id, note, tags, date }
    */
-  toJSON () {
+  toJSON() {
     return {
       id: this.id,
       note: this.note,
       tags: this.tags,
-      date: this.date.toISOString()
+      date: this.date.toISOString(),
     }
   }
 
@@ -32,7 +32,7 @@ class Log {
    * @param {Object} json  JSON object { id, note, tags, date }
    * @returns {Log}
    */
-  static fromJSON (json) {
+  static fromJSON(json) {
     const log = new Log(json.note, json.tags)
     log.id = json.id
     log.date = new Date(json.date)
@@ -44,7 +44,7 @@ class Log {
    * @param {string} tag  Tag to be checked
    * @returns {boolean}  True if the log has the tag, false otherwise
    */
-  hasTag (tag) {
+  hasTag(tag) {
     return this.tags.includes(tag)
   }
 }

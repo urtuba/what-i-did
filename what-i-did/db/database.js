@@ -1,6 +1,6 @@
-import fs from "fs"
-import { dbPath } from "../config.js"
-import Log from "../lib/log.js"
+import fs from 'fs'
+import { dbPath } from '../config.js'
+import Log from '../lib/log.js'
 
 /**
  * @class
