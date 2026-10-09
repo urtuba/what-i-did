@@ -2,6 +2,8 @@
 
 Simple Personal Logger CLI
 
+> Personal tool, 2022. Kept as a record; not maintained. Notes are stored as plain JSON in `~/.what-i-did/db/data.json`, so don't use it for passwords or other secrets.
+
 ## How to install
 
 ### zsh Terminals
@@ -26,7 +28,7 @@ Install
 $ zsh INSTALL.sh
 ```
 
-Then you can remove clonned repository.
+Then you can remove the cloned repository.
 
 ## Use
 
@@ -39,14 +41,14 @@ After installation, the `wid` command is going to be available in your terminal.
 Name of your notes is `log`. Logs can be created with multiple tags. Here is example:
 
 ```
-$ wid log movie girlfriend
+$ wid log movie weekend
 ```
 
-It means create a log with movie and girlfriend tags. It asks for your for your note later:
+It creates a log with the tags movie and weekend, then asks for the note:
 
 ```
 Note: Natural Born Killers (1994)
-Sat Feb 19 2022 Natural Born Killers (1994)  ~ ~ [ movie, girlfriend ]
+Sat Feb 19 2022 Natural Born Killers (1994)  ~ ~ [ movie, weekend ]
 Log saved!
 ```
 
@@ -56,8 +58,8 @@ Log saved!
 $ wid ls --limit=3
 
 Wed Feb 16 2022 Good morning  ~ ~ [  ]
-Thu Feb 17 2022 Girls123!  ~ ~ [ wifi, password ]
-Sat Feb 19 2022 Natural Born Killers (1994)  ~ ~ [ movie, girlfriend ]
+Thu Feb 17 2022 Renew library card  ~ ~ [ todo ]
+Sat Feb 19 2022 Natural Born Killers (1994)  ~ ~ [ movie, weekend ]
 ```
 
 To delete everything (asks for confirmation):
@@ -71,3 +73,8 @@ If you are confused:
 ```
 $ wid help
 ```
+
+## Known issues
+
+- `INSTALL.sh` works only with zsh, adds the `wid` alias again on every run, and copies the folder inside itself when you install twice.
+- The user name in `config.js` is hard-coded.
